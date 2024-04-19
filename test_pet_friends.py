@@ -129,7 +129,7 @@ def test_successful_update_self_pet_info(name='Мурзик', animal_type='Ко�
         assert status == 200
         assert result['name'] == name
     else:
-        # если спиок питомцев пустой, то выкидываем исключение с текстом об отсутствии своих питомцев
+        # если спиcок питомцев пустой, то выкидываем исключение с текстом об отсутствии своих питомцев
         raise Exception("There is no my pets")
 
 
@@ -172,6 +172,14 @@ def test_empty_create_pet_simple():
     # В параметрах метода пусто.
     # Отправляем запрос на получение auth_key
     _, auth_key = pf.get_api_key(unvalid_email, valid_password)
+    status, result = pf.create_pet_simple(auth_key, name, animal_type, age)
+    assert status == 200
+    assert result['name'] == name
+
+def test_long_name_create_pet_simple(name='Иван Васильевичывываываываываывфаывфаргывфоарыивофаоыфврмдшфыаигыфвдлоаыолвфаипдорвыфапыфрваипдвоыфраипдорвыфиаодвыфрапвыдфорапдыфвраипдрвыофпадыоврфапиыдорвфпадырвофпдоавы', animal_type='Пёсе', age=10):
+    # Отправляем запрос на получение auth_key  с верным email
+    _, auth_key = pf.get_api_key(valid_email, valid_password)
+
     status, result = pf.create_pet_simple(auth_key, name, animal_type, age)
     assert status == 200
     assert result['name'] == name
