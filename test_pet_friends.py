@@ -176,7 +176,7 @@ def test_empty_create_pet_simple():
     assert status == 200
     assert result['name'] == name
 
-def test_long_name_create_pet_simple(name='Иван Васильевичывываываываываывфаывфаргывфоарыивофаоыфврмдшфыаигыфвдлоаыолвфаипдорвыфапыфрваипдвоыфраипдорвыфиаодвыфрапвыдфорапдыфвраипдрвыофпадыоврфапиыдорвфпадырвофпдоавы', animal_type='Пёсе', age=10):
+def test_long_name_create_pet_simple(name='juwNРсcQjЬOтвНЕУъь1SSXBФмbяЧяНRЗиЩoеWfщЭmпiТьмЮаJбэтРiПGnоИЬLТЩgМAEиъuйeaУklVЯЯвГRoПmoIkNufuDцлpбxТSдVкФещпNИлмDHrRЩЭфaвOJЬхfЫЯKOЪРЮdЦхЧPVЛМXЪаСХaяФЖЦТivKvhutсkвFшzлЮmzЦOЬОУьтВБаНЬЖэеlNюwЛIЭЭГИU森林yиpхОЕjtRхэeбйStiqXNvСЙКboхьXЗrеcoЭsиХDMТakЭШeРNвпВwтCЛВRlrjmг', animal_type='Пёсе', age=10):
     # Отправляем запрос на получение auth_key  с верным email
     _, auth_key = pf.get_api_key(valid_email, valid_password)
 
